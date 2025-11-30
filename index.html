@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDSF | School of Data Science and Forecasting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <!-- ===== Header / Navbar ===== -->
+  <div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+ 
+  <!-- ===== Hero Section (Image Slider) ===== -->
+<section class="hero-slider">
+  <div class="slide fade">
+    <img src="photoes/dark5.png" alt="Slide 1">
+    <div class="hero-text">
+      <p class="tagline">Empowering Through Analytics</p>
+          <h1 class="code-colored">
+            <span class="c1">Creative</span><br>
+            <span class="c2">& Logical</span><br>
+            <span class="c3">Thinking Ahead.</span>
+          </h1>
+
+      
+    </div>
+  </div>
+
+  <div class="slide fade">
+    <img src="photoes/i1.png" alt="Slide 2">
+    <div class="hero-text">
+      <p class="tagline">Decode. Analyze. Predict.</p>
+      <h1 class="code-colored">
+            <span class="c1">Turning </span><br>
+            <span class="c2">Complex Code</span><br>
+            <span class="c3">into Clarity</span>
+          </h1>
+
+    </div>
+  </div>
+
+  <div class="slide fade">
+    <img src="photoes/i2.png" alt="Slide 3">
+    <div class="hero-text">
+      <p class="tagline">Data is Power</p>
+       <h1 class="code-colored">
+            <span class="c1">Where  </span><br>
+            <span class="c2">Number Speaks </span><br>
+            <span class="c3">& Code Creates</span>
+          </h1>
+    </div>
+  </div>
+
+  <div class="slide fade">
+    <img src="photoes/i3.png" alt="Slide 4">
+    <div class="hero-text">
+      <p class="tagline">Learning Beyond Limits</p>
+       <h1 class="code-colored">
+            <span class="c1">Empopwering</span><br>
+            <span class="c2">Innovators of</span><br>
+            <span class="c3">the Future</span>
+          </h1>
+    </div>
+  </div>
+
+    <!-- Arrow Buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Dots for manual control -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+</section>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 5000);
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+
+        function plusSlides(n) {
+      slideIndex += n;
+      showSlides();
+    }
+
+  </script>
+
+
+
+<div class="indian-mathematics-center">
+  <a 
+     href="https://dsf.dauniv.ac.in/notices/IKS-Centre.pdf" 
+     target="_blank" 
+     class="research-link">
+      Research Centre of Ancient Indian Mathematics
+  </a>
+</div>
+
+
+<!--this part has both the 'Latest News and Notices along with Training and placement'-->
+<div class="dual-container">
+
+    <
+                          <!-- ===== Latest News and Notices ===== -->
+                        <section class="notice-section">
+                                      <h2 class="notice-heading">Latest News & Notices</h2>
+
+                                      <div class="notice-list">
+
+                                          <div class="notice-item">
+                                              <span class="bullet"></span>
+                                              <p>
+                                                  Admission Open in M-Tech (Big Data Analytics) / M-Tech (Data Science) for Working Executives & M.Sc (Data Science & Analysis), MBA (Business Analytics) Against Vacant Seats
+                                              </p>
+                                          </div>
+
+                                          <div class="notice-item dropdown">
+                                              <span class="bullet"></span>
+                                              <p class="dropdown-toggle">
+                                                  Class Time Table 2025-26 Released – Download Updated Schedule
+                                              </p>
+                                          </div>
+                                                  <!--Hidden content-->
+                                                  <div class="dropdown-content">
+                                                      <h3>1. M.Tech (Dual Degree) – AI & DS</h3>
+                                                      <ul>
+                                                          <li><a href="https://dsf.dauniv.ac.in/notices/Class%20Time%20table%20-%20MT-AIDS-3%20Sem.pdf">Third Semester (2024–29)</a></li>
+                                                          <li><a href="https://dsf.dauniv.ac.in/notices/Class%20Time%20table%20-%20MT-AIDS-5%20Sem.pdf">Fifth Semester (2023–28)</a></li>
+                                                          <li><a href="https://dsf.dauniv.ac.in/notices/Class%20Time%20table%20-%20MT-AIDS-7%20Sem.pdf">Sevent Semester (2022–27)</a></li>
+                                                          <li><a href="https://dsf.dauniv.ac.in/notices/Class%20Time%20table%20-%20MT-AIDS-9%20Sem.pdf">Ninth Semester (2021–26)</a></li>
+                                                      </ul>
+
+                                                      <h3>2. M.Tech (Data Science) / BIG DATA ANALYTICS</h3>
+                                                      <ul>
+                                                              <li><a href="https://dsf.dauniv.ac.in/notices/Time-Table-M.TECH.pdf">Firts Semester (2025–27)</a></li>
+                                                          </ul>
+                                                      </div>
+
+                                          <div class="notice-item">
+                                              <span class="bullet"></span>
+                                              <p>
+                                                  Semester-III Internal Exam Dates Announced for All Departments
+                                              </p>
+                                          </div>
+
+                                          <div class="notice-item">
+                                              <span class="bullet"></span>
+                                              <p>
+                                                  Workshop on AI & Data Security – Registrations Open Till 12th Dec
+                                              </p>
+                                          </div>
+
+                                      </div>
+                                  </section>
+
+           <!--training and placement -->
+
+             <section class="tp-section">
+                  <h2 class="training-heading">Training & Placement</h2>
+
+                  <div class="training-list">
+
+                      <div class="notice-item dropdown">
+                          <span class="bullet"></span>
+                          <p class="dropdown-toggle">
+                            Teaching Schedules
+                          </p>
+                      </div>
+
+                            <!--HIdden details -->
+                            <div class="dropdown-content">
+
+                                              <h3>1. M.Tech. (Data Science)</h3>
+
+                                              <h3>2. M.Tech. (Big Data Analytics)</h3>
+
+                                              <h3>3. M.Tech. (Executive) in Data Science</h3>
+
+                                              <h3>4. M.Tech. (Integrated) AI & DS</h3>
+
+                                              <h3>5. M.B.A. (Business Analytics)</h3>
+                                              <ul>
+                                                  <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.B.A.(BA)-I.pdf">First Semester (2024–26)</a></li>
+                                                  <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.B.A.(BA)-III-Sem..pdf">Third Semester (2023–25)</a></li>
+                                              </ul>
+
+                                              <h3>6. M.Sc. (Data Science & Analytics)</h3>
+                                              <ul>
+                                                  <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.Sc.(DSA)-I-Sem..pdf">First Semester (2024–26)</a></li>
+                                              </ul>
+
+                                          </div>
+
+                      <div class="tp-item">
+                          <span class="bullet"></span>
+                          <p>Short-Term Training</p>
+                      </div>
+
+                      <div class="tp-item">
+                          <span class="bullet"></span>
+                          <p>Internship</p>
+                      </div>
+
+                      <div class="tp-item">
+                          <span class="bullet"></span>
+                          <p>Guidelines for Projects</p>
+                      </div>
+
+                      <div class="tp-item">
+                          <span class="bullet"></span>
+                          <p>Placement</p>
+                      </div>
+
+                      <div class="tp-item">
+                          <span class="bullet"></span>
+                          <p>Training and Placement Cell</p>
+                      </div>
+
+                  </div>
+              </section>
+
+
+</div>
+
+              <!--Scholarships-->
+               <section class="tp-section">
+                    <h2 class="scholarship-heading">Scholarships</h2>
+
+                    <div class="scholarship-list">
+
+                        <!-- Dropdown item -->
+                        <div class="notice-item dropdown">
+                            <span class="bullet"></span>
+                            <p class="dropdown-toggle">Available Scholarships</p>
+                        </div>
+
+                        <!-- Hidden content -->
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="#">GATE Scholarships</a></li>
+                                <li><a href="#">M.P. State Govt. Scholarships</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+
+               <footer class="footer">
+                    <a href="#top" class="back-to-top">↑ Back to Top</a>
+              </footer>
+
+
+
+              <!--below contact stuffs and informations-->
+              <footer class="main-footer">
+                    <div class="footer-container">
+
+                        <!-- Column 1 -->
+                        <div class="footer-col">
+                            <h3>UNIVERSITY ADDRESS</h3>
+                            <p>School Of Data Science and Forecasting</p>
+                            <p>IET-DAVV Campus</p>
+                            <p>Khandwa Road, Indore</p>
+                            <p>Madhya Pradesh – PIN: 452020</p>
+                            <p>Phone: +91 0000000000</p>
+                            <p>Email: info@sdsf.ac.in</p>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div class="footer-col">
+                            <h3>SOCIAL MEDIA</h3>
+                            <a href="#">Facebook</a><br>
+                            <a href="#">Instagram</a><br>
+                            <a href="#">Twitter</a><br>
+                            <a href="#">YouTube</a>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="footer-col">
+                            <h3>QUICK LINKS</h3>
+                            <a href="#">Careers</a><br>
+                            <a href="#">Anti-Ragging Committee</a><br>
+                            <a href="#">Grievance Cell</a><br>
+                            <a href="#">Committees</a><br>
+                            <a href="#">Ordinance</a><br>
+                            <a href="#">Statutes</a>
+                        </div>
+
+                        <!-- Column 4 -->
+                        <div class="footer-col">
+                            <h3>PARENTS</h3>
+                            <a href="#">How to Reach</a><br>
+                            <a href="#">Hotels Nearby</a><br>
+                            <a href="#">Parents Login</a><br>
+                            <a href="#">Contact Us</a>
+                        </div>
+
+                    </div>
+                </footer>
+
+
+
+                <!-- this scirpt for the timetbale part under the noitice section-->
+               <script>
+                document.querySelectorAll(".dropdown").forEach(function(drop){
+                    drop.addEventListener("click", function() {
+                        const content = this.nextElementSibling;
+                        content.style.display =
+                            (content.style.display === "block") ? "none" : "block";
+                    });
+                });
+                </script>
+
+
+                <!--back to top wali bakchodi -->
+                <script>
+                    const backToTopBtn = document.querySelector(".back-to-top");
+
+                    window.addEventListener("scroll", () => {
+                        if (window.scrollY > 300) {
+                            backToTopBtn.style.display = "block";
+                        } else {
+                            backToTopBtn.style.display = "none";
+                        }
+                    });
+
+                    // Smooth scroll to top
+                    backToTopBtn.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    });
+                </script>
+
+
+
+</body>
+</html>
