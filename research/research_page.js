@@ -663,3 +663,27 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Research page initialized successfully!');
     console.log(`Loaded: ${phdData.length} Ph.D.s, ${supervisorsData.length} Supervisors, ${publicationsData.length} Publications, ${projectsData.length} Projects`);
 });
+
+// this is the java script code for the Academic Projects Section part
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+  
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Toggle active class
+      this.classList.toggle('active');
+      
+      // Toggle dropdown content
+      const content = this.nextElementSibling;
+      content.classList.toggle('show');
+      
+      
+       dropdownBtns.forEach(otherBtn => {
+        if (otherBtn !== this) {
+          otherBtn.classList.remove('active');
+          otherBtn.nextElementSibling.classList.remove('show');
+        }
+      });
+    });
+  });
+});

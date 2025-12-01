@@ -669,6 +669,98 @@ body {
     font-size: 0.95rem;
 }
 
+/* Academic Projects */
+.projects-container{
+    max-width : 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.project-dropdown{
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.1);
+}
+.dropdown-btn{
+    width: 100%;
+    padding:18px 20px;
+    background: #f8f9fa;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-bewtween;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    transition: bnackground 0.3s ease;
+}
+
+.dropdown-btn:hover{
+    background:#e9ecef;
+}
+
+.dropdown-btn.active{
+    background: #6366f1;
+    color:white;
+}
+
+.project-number{
+    font-weight: bold;
+    margin-right: 10px;
+    color:#6366f1;
+}
+
+.dropdown0btn.active .project-number{
+    color: white;
+}
+
+.project-title{
+    flex:1;
+    font-weight: 500;
+}
+.dropdown-arrow{
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+.dropdown-btn.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content.show {
+  max-height: 500px;
+}
+.dropdown-content.show {
+  max-height: 500px;
+}
+
+.project-details {
+  padding: 20px;
+  background: white;
+}
+
+.detail-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.6;
+}
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row strong {
+  color: #333;
+  display: inline-block;
+  min-width: 180px;
+}
 /* ===== Footer ===== */
 .footer {
     /* CHANGED: Matched background from Code 2 */
