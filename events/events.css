@@ -1,0 +1,765 @@
+/* ===== Code for SDSF Events Page ===== */
+/* ===== GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f6f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+section {
+    padding: 4rem 6rem;
+}
+
+/* Animations for scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== HERO SECTION ===== */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.events-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.events-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 20, 40, 0.7);
+    z-index: 2;
+}
+
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.events-hero h2 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.5rem;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.3s;
+}
+
+.events-hero h3,
+.events-hero .hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.6s;
+}
+
+.events-hero p,
+.events-hero .hero-intro-text {
+    color: #f0f3ff;
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.9s;
+}
+
+/* ===== SECTION INTRO ===== */
+.section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+/* ===== SCHOLARSHIPS SECTION ===== */
+.scholarships-section {
+    padding: 4rem 6rem;
+    background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.scholarships-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #222;
+    font-weight: 700;
+}
+
+.scholarships-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #28a745;
+    border-radius: 2px;
+}
+
+.scholarship-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.scholarship-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    flex-basis: calc(33.333% - 1.5rem);
+    min-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid #28a745;
+}
+
+.scholarship-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(40, 167, 69, 0.2);
+}
+
+.scholarship-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.scholarship-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #28a745;
+    text-align: center;
+    font-weight: 600;
+}
+
+.scholarship-card > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.scholarship-details ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.scholarship-details ul li {
+    padding: 0.5rem 0;
+    color: #444;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.scholarship-details ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.scholarship-btn {
+    display: block;
+    text-align: center;
+    background: #28a745;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.scholarship-btn:hover {
+    background: #218838;
+    transform: translateY(-3px);
+}
+
+.scholarship-info-box {
+    background: #fff;
+    border: 1px solid #d4edda;
+    border-left: 5px solid #28a745;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.scholarship-info-box h4 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.scholarship-info-box p {
+    margin-bottom: 0.8rem;
+    color: #444;
+}
+
+.scholarship-info-box a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.scholarship-info-box a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TRAINING & PLACEMENT SECTION ===== */
+.placement-section {
+    padding: 4rem 6rem;
+    background: #fcfdff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.placement-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #222;
+    font-weight: 700;
+}
+
+.placement-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #ff6b35;
+    border-radius: 2px;
+}
+
+/* Coordinator Section */
+.coordinator-container {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+}
+
+.coordinator-container h3 {
+    font-size: 2rem;
+    color: #ff6b35;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.coordinator-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    border-left: 5px solid #ff6b35;
+}
+
+.coordinator-image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ff6b35;
+}
+
+.coordinator-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coordinator-info h4 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.coordinator-designation {
+    font-size: 1.1rem;
+    color: #ff6b35;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.coordinator-description {
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.coordinator-contact p {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.coordinator-contact a {
+    color: #ff6b35;
+    text-decoration: none;
+}
+
+.coordinator-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Placed Students Section */
+.placed-students-container {
+    margin-bottom: 4rem;
+}
+
+.placed-students-container h3 {
+    font-size: 2rem;
+    color: #ff6b35;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.students-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.student-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    flex-basis: calc(33.333% - 1.5rem);
+    min-width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid #ff6b35;
+    text-align: center;
+}
+
+.student-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
+}
+
+.student-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.student-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-card h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.student-company {
+    font-size: 1rem;
+    color: #ff6b35;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.student-package {
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.student-program {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0 1rem 1.5rem;
+}
+
+/* Placement Statistics */
+.placement-stats {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.placement-stats h3 {
+    font-size: 2rem;
+    color: #ff6b35;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ff6b35, #ff8c61);
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    flex-basis: calc(25% - 1.5rem);
+    min-width: 200px;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ===== EVENT GALLERY SECTION ===== */
+.gallery-section {
+    padding: 4rem 6rem;
+    background: linear-gradient(to bottom, #f8f4ff, #ffffff);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #222;
+    font-weight: 700;
+}
+
+.gallery-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #6c5ce7;
+    border-radius: 2px;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    flex-basis: calc(50% - 1rem);
+    min-width: 320px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid #6c5ce7;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(108, 92, 231, 0.2);
+}
+
+.news-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #6c5ce7;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.news-content h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.news-content p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.news-link {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.news-link:hover {
+    color: #5443c4;
+}
+
+/* ===== UPCOMING EVENTS SECTION ===== */
+.upcoming-events-section {
+    padding: 4rem 6rem;
+    background: #fcfdff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.upcoming-events-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #222;
+    font-weight: 700;
+}
+
+.upcoming-events-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #4a68ff;
+    border-radius: 2px;
+}
+
+.events-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.events-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #4a68ff, #6c5ce7);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 15px;
+    height: 15px;
+    background: #4a68ff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #4a68ff;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: #4a68ff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #555;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f3f4f8;
+    border-top: 1px solid #e0e0e0;
+}
+
+.back-top {
+    color: #4a68ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.back-top:hover {
+    text-decoration: underline;
+    color: #3350dd;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 480px) {
+    .quick-nav-link {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .nav-icon {
+        font-size: 1.2rem;
+    }
+
+    .flash-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .scholarship-icon {
+        font-size: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .news-image {
+        height: 200px;
+    }
+}
